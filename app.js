@@ -37,3 +37,6 @@ async function fetchWeather(insee, name) {
   }
   db.connect();
 })();
+
+// url api pollution
+//https://api.waqi.info/feed/albi/?token=

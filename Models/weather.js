@@ -4,7 +4,9 @@ const weatherSchema = new mongoose.Schema({
   city: String,
   temperature: Number,
   wind: Number,
-  weather: String
+  weather: String,
+  date : Date,
+  probarain: Number,
 });
 
 const Weather = mongoose.model('Weather', weatherSchema);

@@ -8,7 +8,7 @@ const db = require('./database');
 const apiKey = process.env.API_KEY;
 const cities = [
   { insee: '81004', name: 'Albi' },
-  { insee: '35238', name: 'Rennes' },
+ // { insee: '35238', name: 'Rennes' },
   { insee: '31555', name: 'Toulouse' }
 ];
 
@@ -21,6 +21,8 @@ async function fetchWeather(insee, name) {
       city: name,
       temperature: response.data.forecast.temp2m,
       wind: response.data.forecast.wind10m,
+      date: response.data.forecast.datetime,
+      probarain: response.data.forecast.probarain,
       weather: response.data.forecast.weather
     });
     await weatherData.save();
